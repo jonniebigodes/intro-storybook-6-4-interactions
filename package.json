@@ -62,10 +62,12 @@
     "@storybook/addon-essentials": "^6.4.0-beta.31",
     "@storybook/addon-interactions": "^6.4.0-beta.12",
     "@storybook/addon-links": "^6.4.0-beta.31",
+    "@storybook/addon-storyshots": "^6.3.12",
     "@storybook/node-logger": "^6.4.0-beta.31",
     "@storybook/preset-create-react-app": "^3.1.7",
     "@storybook/react": "^6.4.0-beta.31",
     "@storybook/testing-library": "^0.0.3",
-    "@storybook/testing-react": "^1.0.0-next.0"
+    "@storybook/testing-react": "^1.0.0-next.0",
+    "react-test-renderer": "^17.0.2"
   }
 }
