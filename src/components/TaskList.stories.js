@@ -1,5 +1,7 @@
 import React from "react";
 
+import { fireEvent, userEvent, within } from "@storybook/testing-library";
+
 import TaskList from "./TaskList";
 import * as TaskStories from "./Task.stories";
 
@@ -47,4 +49,20 @@ Empty.args = {
   // Inherited data coming from the Loading story.
   ...Loading.args,
   loading: false,
+};
+
+export const WithInteractions = Template.bind({});
+WithInteractions.args = {
+  // Shaping the stories through args composition.
+  ...Default.args,
+};
+
+WithInteractions.play = async ({ canvasElement }) => {
+  const canvas = within(canvasElement);
+
+  // simulates pinning the first task
+  await fireEvent.click(canvas.getByLabelText("pinTask-5"));
+
+  // simulates archiving the third task
+  await fireEvent.click(canvas.getByLabelText("archiveTask-3"));
 };

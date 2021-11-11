@@ -15,14 +15,24 @@ export default function Task({
           disabled={true}
           name="checked"
         />
-        <span className="checkbox-custom" onClick={() => onArchiveTask(id)} />
+        <span
+          className="checkbox-custom"
+          onClick={() => onArchiveTask(id)}
+          data-testid={`archiveTask-${id}`}
+          id={`archiveTask-${id}`}
+          aria-label={`archiveTask-${id}`}
+        />
       </label>
       <div className="title">
         <input
           type="text"
           value={title}
-          readOnly={true}
           placeholder="Input title"
+          readOnly={true}
+          id={`title-${id}`}
+          data-testid={`title-${id}`}
+          name={`title-${id}`}
+          aria-label={`title-${id}`}
         />
       </div>
 
@@ -30,7 +40,12 @@ export default function Task({
         {state !== "TASK_ARCHIVED" && (
           // eslint-disable-next-line jsx-a11y/anchor-is-valid
           <a onClick={() => onPinTask(id)}>
-            <span className={`icon-star`} />
+            <span
+              className={`icon-star`}
+              data-testid={`pinTask-${id}`}
+              id={`pinTask-${id}`}
+              aria-label={`pinTask-${id}`}
+            />
           </a>
         )}
       </div>
