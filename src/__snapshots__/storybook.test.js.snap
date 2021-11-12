@@ -14,7 +14,10 @@ exports[`Storyshots Task Archived 1`] = `
       type="checkbox"
     />
     <span
+      aria-label="archiveTask-1"
       className="checkbox-custom"
+      data-testid="archiveTask-1"
+      id="archiveTask-1"
       onClick={[Function]}
     />
   </label>
@@ -22,6 +25,10 @@ exports[`Storyshots Task Archived 1`] = `
     className="title"
   >
     <input
+      aria-label="title-1"
+      data-testid="title-1"
+      id="title-1"
+      name="title-1"
       placeholder="Input title"
       readOnly={true}
       type="text"
@@ -49,7 +56,10 @@ exports[`Storyshots Task Default 1`] = `
       type="checkbox"
     />
     <span
+      aria-label="archiveTask-1"
       className="checkbox-custom"
+      data-testid="archiveTask-1"
+      id="archiveTask-1"
       onClick={[Function]}
     />
   </label>
@@ -57,6 +67,10 @@ exports[`Storyshots Task Default 1`] = `
     className="title"
   >
     <input
+      aria-label="title-1"
+      data-testid="title-1"
+      id="title-1"
+      name="title-1"
       placeholder="Input title"
       readOnly={true}
       type="text"
@@ -71,7 +85,10 @@ exports[`Storyshots Task Default 1`] = `
       onClick={[Function]}
     >
       <span
+        aria-label="pinTask-1"
         className="icon-star"
+        data-testid="pinTask-1"
+        id="pinTask-1"
       />
     </a>
   </div>
@@ -92,7 +109,10 @@ exports[`Storyshots Task Pinned 1`] = `
       type="checkbox"
     />
     <span
+      aria-label="archiveTask-1"
       className="checkbox-custom"
+      data-testid="archiveTask-1"
+      id="archiveTask-1"
       onClick={[Function]}
     />
   </label>
@@ -100,6 +120,10 @@ exports[`Storyshots Task Pinned 1`] = `
     className="title"
   >
     <input
+      aria-label="title-1"
+      data-testid="title-1"
+      id="title-1"
+      name="title-1"
       placeholder="Input title"
       readOnly={true}
       type="text"
@@ -114,7 +138,10 @@ exports[`Storyshots Task Pinned 1`] = `
       onClick={[Function]}
     >
       <span
+        aria-label="pinTask-1"
         className="icon-star"
+        data-testid="pinTask-1"
+        id="pinTask-1"
       />
     </a>
   </div>
