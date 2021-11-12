@@ -9,12 +9,28 @@ const defaultTasks = [
   { id: "4", title: "Something again", state: "TASK_INBOX" },
 ];
 
+const AppState = createSlice({
+  name: "appState",
+  initialState: "",
+  reducers: {
+    updateAppState: (state, action) => {
+      /*  console.log("updateAppState", JSON.stringify(state, null, 2));
+      console.log("AppState Action", action.payload); */
+      return {
+        ...state,
+        isError: action.payload,
+      };
+    },
+  },
+});
+
 const TasksSlice = createSlice({
   name: "tasks",
   initialState: defaultTasks,
   reducers: {
     updateTaskState: (state, action) => {
       const { id, newTaskState } = action.payload;
+      console.log("taskSlice state", JSON.stringify(state, null, 2));
       const task = state.findIndex((task) => task.id === id);
       if (task >= 0) {
         state[task].state = newTaskState;
@@ -34,10 +50,16 @@ const TasksSlice = createSlice({
 
 export const { updateTaskState, updateTaskTitle } = TasksSlice.actions;
 
-const store = configureStore({
-  reducer: {
-    tasks: TasksSlice.reducer,
+export const { updateAppState } = AppState.actions;
+
+const store = configureStore(
+  {
+    reducer: {
+      tasks: TasksSlice.reducer,
+      isError: AppState.reducer,
+    },
   },
-});
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 export default store;

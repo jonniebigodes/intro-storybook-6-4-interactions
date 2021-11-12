@@ -3,9 +3,6 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTaskState } from "../lib/store";
 
-import { connect } from "react-redux";
-import { archiveTask, pinTask } from "../lib/store";
-
 import Task from "./Task";
 
 export function PureTaskList({ loading, tasks, onPinTask, onArchiveTask }) {
@@ -74,7 +71,7 @@ PureTaskList.defaultProps = {
 
 export function TaskList() {
   const tasks = useSelector((state) => state.tasks);
-
+  console.log("TaskList", tasks);
   const dispatch = useDispatch();
 
   const pinTask = (value) => {
