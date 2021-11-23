@@ -59,5 +59,5 @@ UsingInteractions.play = async ({ canvasElement }) => {
   await fireEvent.click(canvas.getByLabelText("pinTask-5"));
 
   // simulates archiving the third task
-  await fireEvent.click(canvas.getByLabelText("archiveTask-3"));
+  await fireEvent.click(canvas.getByLabelText("pinTask-3"));
 };
