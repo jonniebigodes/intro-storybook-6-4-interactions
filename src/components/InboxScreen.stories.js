@@ -6,8 +6,27 @@ import * as TaskListStories from "./TaskList.stories";
 
 import { PureInboxScreen } from "./InboxScreen";
 import { fireEvent, within } from "@storybook/testing-library";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
-const Mockstore = {
+const Mockstore = configureStore({
+  reducer: {
+    tasks: createSlice({
+      name: "tasks",
+      initialState: TaskListStories.Default.args.tasks,
+      reducers: {
+        updateTaskState: (state, action) => {
+          const { id, newTaskState } = action.payload;
+          console.log("taskSlice state", JSON.stringify(state, null, 2));
+          const task = state.findIndex((task) => task.id === id);
+          if (task >= 0) {
+            state[task].state = newTaskState;
+          }
+        },
+      },
+    }).reducer,
+  },
+});
+/* const Mockstore = {
   getState: () => {
     return {
       tasks: TaskListStories.Default.args.tasks,
@@ -15,7 +34,7 @@ const Mockstore = {
   },
   subscribe: () => 0,
   dispatch: action("dispatch"),
-};
+}; */
 
 export default {
   component: PureInboxScreen,
